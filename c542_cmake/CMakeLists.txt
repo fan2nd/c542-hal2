@@ -16,15 +16,18 @@ include(cmake/components.cmake)
 
 # Stubs to be able to add compiler flag overrides, e.g. -Os
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-  # Add additional source files here
+  app_board.c
+  app_console.c
+  letter_shell/shell.c
+  letter_shell/shell_ext.c
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
-  # Add additional include directories here
+  letter_shell
 )
 
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC
-  # Add additional defined symbols here
+  SHELL_CFG_USER="shell_config.h"
 )
 
 target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC
@@ -41,4 +44,10 @@ target_link_directories(${CMAKE_PROJECT_NAME} PUBLIC
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC
   # Add additional linker libraries here
+)
+
+add_custom_command(TARGET c542 POST_BUILD
+  COMMAND ${CMAKE_OBJCOPY} -O binary $<TARGET_FILE:c542> $<TARGET_FILE_DIR:c542>/c542.bin
+  COMMAND ${CMAKE_SIZE} $<TARGET_FILE:c542>
+  VERBATIM
 )
