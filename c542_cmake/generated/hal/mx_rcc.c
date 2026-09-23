@@ -103,5 +103,9 @@ void mx_rcc_deinit(void)
   */
 system_status_t mx_rcc_peripherals_clock_config(void)
 {
+  /* Peripherals using PCLK1 (144 MHz):
+    USART2
+  */
+
   return SYSTEM_OK;
 }

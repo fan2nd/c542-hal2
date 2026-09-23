@@ -343,10 +343,12 @@
       <description>STMicroelectronics HAL CORE, GPIO and DMA Init dependencies</description>
       <require condition="CMSIS Core"/>
       <require Cclass="Device" Cgroup="STM32 HAL" Csub="GPIO"/>
+      <require Cclass="Device" Cgroup="STM32 HAL" Csub="DMA"/>
     </condition>
     <condition id="HAL CORE DMA Init">
       <description>STMicroelectronics HAL CORE and DMA Init dependencies</description>
       <require condition="CMSIS Core"/>
+      <require Cclass="Device" Cgroup="STM32 HAL" Csub="DMA"/>
     </condition>
     <condition id="HAL CORE Init and CRC">
       <description>STMicroelectronics HAL CRC Init dependencies</description>
@@ -443,8 +445,7 @@
       <description>STMicroelectronics HAL UART Init dependencies</description>
       <require condition="HAL CORE GPIO DMA Init"/>
       <require condition="HAL System Init"/>
-
-      <require Cclass="Device" Cgroup="STM32 LL" Csub="USART"/>
+      <require Cclass="Device" Cgroup="STM32 HAL" Csub="UART"/>
     </condition>
     <condition id="HAL CORE GPIO DMA Init and USART">
       <description>STMicroelectronics HAL USART Init dependencies</description>
@@ -534,7 +535,7 @@
     <condition id="System files">
       <description>System files for codegen</description>
       <require Cclass="Device" Cgroup="STM32 HAL" Csub="CORTEX"/>
-      <require Cclass="Device" Cgroup="STM32 LL" Csub="EXTI"/>
+      <require Cclass="Device" Cgroup="STM32 HAL" Csub="EXTI"/>
       <require Cclass="Device" Cgroup="STM32 LL" Csub="PWR"/>
       <require Cclass="Device" Cgroup="STM32 HAL" Csub="RCC"/>
     </condition>
@@ -576,6 +577,13 @@
         <file category="header" name="mx_cortex_nvic.h" />
       </files>
     </component>
+    <component generator="stm32c5xx_hal_mx2codegen" Cclass="Device" Cgroup="STM32CubeMX2 Config" Csub="GPIO"   Cversion="2.1.0" condition="HAL GPIO Init">
+      <description>TO BE DEFINED</description>
+      <files>
+        <file category="source" name="mx_gpio_default.c" />
+        <file category="header" name="mx_gpio_default.h" />
+      </files>
+    </component>
     <component generator="stm32c5xx_hal_mx2codegen" Cclass="Device" Cgroup="STM32CubeMX2 Config" Csub="ICACHE"   Cversion="2.1.0" condition="HAL CORE Init and ICACHE">
       <description>TO BE DEFINED</description>
       <files>
@@ -601,6 +609,13 @@
         <file category="header" name="mx_def.h" />
         <file category="header" name="stm32_external_env.h" />
         <file category="other" name="mx_stm32c5xx_hal_drivers_license.md" />
+      </files>
+    </component>
+    <component generator="stm32c5xx_hal_mx2codegen" Cclass="Device" Cgroup="STM32CubeMX2 Config" Csub="UART"   Cversion="2.1.0" condition="HAL CORE GPIO DMA Init and UART">
+      <description>TO BE DEFINED</description>
+      <files>
+        <file category="source" name="mx_usart2.c" />
+        <file category="header" name="mx_usart2.h" />
       </files>
     </component>
   </components>

@@ -1,5 +1,5 @@
 # file-format: 1.0.0
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.30)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 set(CMAKE_C_COMPILER_FORCED TRUE)

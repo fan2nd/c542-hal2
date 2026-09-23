@@ -29,11 +29,25 @@ extern "C" {
 #include "stm32_hal.h"
 #include "mx_cortex_mpu.h"
 #include "mx_cortex_nvic.h"
+#include "mx_gpio_default.h"
 #include "mx_icache.h"
 #include "mx_rcc.h"
+#include "mx_usart2.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
+
+  /* *************************************************************
+    USART2 / LPDMA1_CH0: No software label has been defined for this peripheral instance
+      in the STM32CubeMX2 configuration panel.
+      As a result, no aliases are generated for Channel instance
+    ************************************************************* */
+
+  /* *************************************************************
+    USART2 / LPDMA1_CH1: No software label has been defined for this peripheral instance
+      in the STM32CubeMX2 configuration panel.
+      As a result, no aliases are generated for Channel instance
+    ************************************************************* */
 
 /* Exported macros -----------------------------------------------------------*/
 
@@ -52,6 +66,12 @@ extern "C" {
     ************************************************************* */
 
   /* *************************************************************
+    gpio_default: No software label has been defined for this peripheral instance
+      in the STM32CubeMX2 configuration panel.
+      As a result, no aliases are generated for mx_gpio_default_init
+    ************************************************************* */
+
+  /* *************************************************************
     ICACHE: No software label has been defined for this peripheral instance
       in the STM32CubeMX2 configuration panel.
       As a result, no aliases are generated for mx_icache_init
@@ -61,6 +81,12 @@ extern "C" {
     RCC: No software label has been defined for this peripheral instance
       in the STM32CubeMX2 configuration panel.
       As a result, no aliases are generated for mx_rcc_init
+    ************************************************************* */
+
+  /* *************************************************************
+    USART2: No software label has been defined for this peripheral instance
+      in the STM32CubeMX2 configuration panel.
+      As a result, no aliases are generated for mx_usart2_uart_init
     ************************************************************* */
 
 /* ########################################################### */
@@ -80,9 +106,21 @@ extern "C" {
     ************************************************************* */
 
   /* *************************************************************
+    gpio_default: No software label has been defined for this peripheral instance
+      in the STM32CubeMX2 configuration panel.
+      As a result, no aliases are generated for mx_gpio_default_deinit
+    ************************************************************* */
+
+  /* *************************************************************
     ICACHE: No software label has been defined for this peripheral instance
       in the STM32CubeMX2 configuration panel.
       As a result, no aliases are generated for mx_icache_deinit
+    ************************************************************* */
+
+  /* *************************************************************
+    USART2: No software label has been defined for this peripheral instance
+      in the STM32CubeMX2 configuration panel.
+      As a result, no aliases are generated for mx_usart2_uart_deinit
     ************************************************************* */
 
 /* ########################################################### */
@@ -90,9 +128,21 @@ extern "C" {
 /* ########### Aliases to get HAL handle functions ########### */
 
   /* *************************************************************
+    gpio_default / EXTI13: No EXTI software label has been defined for this peripheral instance
+      in the STM32CubeMX2 configuration panel.
+      As a result, no aliases are generated for mx_gpio_default_exti13_gethandle
+    ************************************************************* */
+
+  /* *************************************************************
     ICACHE: No software label has been defined for this peripheral instance
       in the STM32CubeMX2 configuration panel.
       As a result, no aliases are generated for mx_icache_gethandle
+    ************************************************************* */
+
+  /* *************************************************************
+    USART2: No software label has been defined for this peripheral instance
+      in the STM32CubeMX2 configuration panel.
+      As a result, no aliases are generated for mx_usart2_uart_gethandle
     ************************************************************* */
 
 /* ########################################################### */
